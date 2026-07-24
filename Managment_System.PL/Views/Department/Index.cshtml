@@ -1,0 +1,44 @@
+@{
+    ViewBag.Title = "Departments";
+    Layout = "_Layout";
+}
+
+<h1>Departments</h1>
+<br/>
+<br/>
+<a class="btn btn-primary" asp-action="Create">Create New Department</a>
+<br/>
+<br/>
+
+
+<table class="table table-bordered table-striped table-hover text-center fs-4">
+    <thead>
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">Details</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.Code</td>
+                <td>@department.Name</td>
+                <td>@department.StartDate.ToString("dd-MM-yyyy")</td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@department.Id">Details</a>
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@department.Id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@department.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

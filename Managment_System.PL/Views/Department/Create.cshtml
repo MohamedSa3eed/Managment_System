@@ -1,0 +1,30 @@
+@model Department
+
+@{
+    ViewBag.Title = "Create Department";
+    Layout = "_Layout";
+}
+
+<h1>Create Department</h1>
+<br/>
+<br/>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Code" class="col-form-label"></label>
+        <input asp-for="Code" class="form-control" />
+        <span asp-validation-for="Code" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name" class="col-form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartDate" class="col-form-label"></label>
+        <input asp-for="StartDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+        <input type="button" value="Back" class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "Department")'" />
+    </div>
+</form>
