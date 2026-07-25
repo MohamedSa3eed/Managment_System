@@ -20,8 +20,10 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        //modelBuilder.ApplyConfiguration(new DepartmentConfigurations());
+        // modelBuilder.ApplyConfiguration<Department>(new DepartmentConfigurations());
+        // modelBuilder.ApplyConfiguration<Employee>(new EmployeeConfigurations());
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
     public DbSet<Department> Departments { get; set; }
+    public DbSet<Employee> Employees { get; set; }
 }
