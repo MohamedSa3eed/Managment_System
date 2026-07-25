@@ -19,10 +19,8 @@ public enum EmpType
     PartTime = 2
 }
 
-public class Employee
+public class Employee : ModelBase
 {
-    public required int Id { get; set; }
-    
     public required string Name { get; set; }
     
     public required int Age { get; set; }
