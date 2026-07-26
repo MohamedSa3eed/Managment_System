@@ -76,3 +76,8 @@
         <input type="button" value="Back" class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "Employee")'" />
     </div>
 </form>
+
+@section ValidationScripts {
+   <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+   <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+}
