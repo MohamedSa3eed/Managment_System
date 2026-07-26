@@ -24,8 +24,8 @@ public class Employee : ModelBase
     public required string Name { get; set; }
     
     public required int Age { get; set; }
-    
-    [RegularExpression(@"^[0-9]{1,3}-[a-zA-Z]{5,10}-[a-zA-Z]{4,10}-[a-zA-Z]{4,10}$]",
+
+    [RegularExpression(@"^[0-9]{1,3}-[a-zA-Z]{5,10}-[a-zA-Z]{4,10}-[a-zA-Z]{4,10}$",
         ErrorMessage = "Address must be like 123-street-city-country")]
     public required string Address { get; set; }
     
