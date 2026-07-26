@@ -25,6 +25,7 @@ public class Program
         );
 
         builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>(); // Allow Dependency Injection 
+        builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
         var app = builder.Build();
 

@@ -1,0 +1,42 @@
+@model Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+    Layout = "_Layout";
+}
+
+<h1>Employee Details</h1>
+<hr />
+
+<div class="card mb-3">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9">@Model.Name</dd>
+            
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">PhoneNumber</dt>
+            <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+            <dt class="col-sm-3">Hiring Date</dt>
+            <dd class="col-sm-9">@Model.HiringDate.ToString("dd-MM-yyyy")</dd>
+
+            <dt class="col-sm-3">Salary</dt>
+            <dd class="col-sm-9">@Model.Salary</dd>
+
+            <dt class="col-sm-3">Employee Type</dt>
+            <dd class="col-sm-9">@Model.EmployeeType</dd>
+
+            <dt class="col-sm-3">Gender</dt>
+            <dd class="col-sm-9">@Model.Gender</dd>
+
+            <dt class="col-sm-3">Is Active</dt>
+            <dd class="col-sm-9">@Model.IsActive</dd>
+
+            <dt class="col-sm-3">Age</dt>
+            <dd class="col-sm-9">@Model.Age</dd>
+        </dl>
+    </div>
+</div>
