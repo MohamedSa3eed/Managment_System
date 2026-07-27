@@ -44,15 +44,7 @@
             <td>@employee.HiringDate.ToString("dd-MM-yyyy")</td>
             <td>@employee.Salary</td>*@
             <td>@employee.EmployeeType</td>
-            <td>
-                <a class="btn btn-warning" asp-action="Details" asp-route-id="@employee.Id">Details</a>
-            </td>
-            <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@employee.Id">Edit</a>
-            </td>
-            <td>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
-            </td>
+            <partial name="_ButtonsPartial" model="@employee.Id" />
         </tr>
     }
     </tbody>

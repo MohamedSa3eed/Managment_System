@@ -29,15 +29,7 @@
                 <td>@department.Code</td>
                 <td>@department.Name</td>
                 <td>@department.StartDate.ToString("dd-MM-yyyy")</td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@department.Id">Details</a>
-                </td>
-                <td>
-                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@department.Id">Edit</a>
-                </td>
-                <td>
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@department.Id">Delete</a>
-                </td>
+                <partial name="_ButtonsPartial" model="@department.Id" />
             </tr>
         }
     </tbody>
