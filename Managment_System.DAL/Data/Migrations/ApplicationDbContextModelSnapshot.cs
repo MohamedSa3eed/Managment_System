@@ -62,6 +62,9 @@ namespace Managment_System.DAL.Data.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<int?>("DepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -105,7 +108,21 @@ namespace Managment_System.DAL.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.ToTable("Employees", (string)null);
+                });
+
+            modelBuilder.Entity("Managment_System.DAL.Models.Employee", b =>
+                {
+                    b.HasOne("Managment_System.DAL.Models.Department", null)
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId");
+                });
+
+            modelBuilder.Entity("Managment_System.DAL.Models.Department", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }
