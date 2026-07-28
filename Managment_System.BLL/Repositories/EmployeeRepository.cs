@@ -16,4 +16,9 @@ public class EmployeeRepository : GenericRepository<Employee>, IEmployeeReposito
     {
         return _dbContext.Employees.Where(e => e.Address.ToLower() == address.ToLower()).AsNoTracking();
     }
+
+    public IQueryable<Employee> GetEmployeesByName(string name)
+    {
+        return _dbContext.Employees.Where(e => e.Name.ToLower().Contains(name.ToLower()));
+    }
 }

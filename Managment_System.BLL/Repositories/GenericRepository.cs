@@ -18,7 +18,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : ModelBase
         return _dbContext.Set<T>().AsNoTracking().ToList();
     }
 
-    public T? Get(int id)
+    public T? Get(int? id)
     {
         // var employee = _dbContext.Employees.Local.Where(e => e.Id == id).FirstOrDefault();
         // if (employee == null)

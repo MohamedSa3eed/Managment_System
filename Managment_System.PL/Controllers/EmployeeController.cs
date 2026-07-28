@@ -14,10 +14,18 @@ public class EmployeeController : Controller
         _employeeRepository = employeeRepository;
     }
     
-    public IActionResult Index()
+    public IActionResult Index(string searchInput)
     {
-        var employees = _employeeRepository.GetAll();
-        return View(employees);
+        if (string.IsNullOrEmpty(searchInput))
+        {
+            var employees = _employeeRepository.GetAll();
+            return View(employees);
+        }
+        else
+        {
+            var employees = _employeeRepository.GetEmployeesByName(searchInput);
+            return View(employees);
+        }
     }
     
     public IActionResult Create()

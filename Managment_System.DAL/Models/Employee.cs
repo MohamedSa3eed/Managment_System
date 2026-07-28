@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Managment_System.DAL.Models;
@@ -51,4 +52,9 @@ public class Employee : ModelBase
     public Gender Gender { get; set; }
     
     public EmpType EmployeeType { get; set; }
+    
+    public int? DepartmentId { get; set; }
+    
+    [NotMapped]
+    public Department? Department { get; set; }
 }
