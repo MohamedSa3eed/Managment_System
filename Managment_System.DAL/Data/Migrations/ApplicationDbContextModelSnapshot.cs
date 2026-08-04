@@ -115,9 +115,12 @@ namespace Managment_System.DAL.Data.Migrations
 
             modelBuilder.Entity("Managment_System.DAL.Models.Employee", b =>
                 {
-                    b.HasOne("Managment_System.DAL.Models.Department", null)
+                    b.HasOne("Managment_System.DAL.Models.Department", "Department")
                         .WithMany("Employees")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("Managment_System.DAL.Models.Department", b =>
