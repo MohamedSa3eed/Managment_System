@@ -5,5 +5,5 @@ public class Department :  ModelBase
     public required string Code { get; set; }
     public required string Name { get; set; }
     public required DateTime StartDate { get; set; }
-    public ICollection<Employee>? Employees { get; set; }
+    public ICollection<Employee>? Employees { get; set; } = new HashSet<Employee>();
 }
